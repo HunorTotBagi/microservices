@@ -1,5 +1,3 @@
 ﻿namespace Catalog.API.Products.CreateProduct;
 
-public class CreateProductEndpoint
-{
-}
+public record CreateProductResult(Guid Id);
