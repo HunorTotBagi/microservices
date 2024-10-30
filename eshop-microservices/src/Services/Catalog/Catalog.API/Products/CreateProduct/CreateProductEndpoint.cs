@@ -1,5 +1,11 @@
-﻿namespace Catalog.API.Products.CreateProduct;
+﻿using Carter;
 
-public class CreateProductEndpoint
+namespace Catalog.API.Products.CreateProduct;
+
+public class CreateProductEndpoint : ICarterModule
 {
+    public void AddRoutes(IEndpointRouteBuilder app)
+    {
+        throw new NotImplementedException();
+    }
 }
