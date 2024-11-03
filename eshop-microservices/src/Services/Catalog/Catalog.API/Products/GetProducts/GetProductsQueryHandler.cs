@@ -7,9 +7,11 @@ internal class GetProductsQueryHandler(IDocumentSession session, ILogger<GetProd
         logger.LogInformation("GetProductsQueryHandler.Handle called with {@Query}", query);
         var products = await session.Query<Product>().ToListAsync(cancellationToken);
 
-        return new GetProductsResult(products);
+        var kolbasz = new GetProductsResult(products);
+
+        return kolbasz;
     }
 }
 
 public record GetProductsQuery() : IQuery<GetProductsResult>;
-public class GetProductsResult(IEnumerable<Product> Products);
+public record GetProductsResult(IEnumerable<Product> Products);
