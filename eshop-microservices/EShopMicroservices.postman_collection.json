@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "85c1a2d2-814b-417b-857d-12cac9bd12ef",
+		"name": "EShopMicroservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29345409"
+	},
+	"item": [
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "POST Catalog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\" : \"Ivan Tancik\",\r\n    \"Category\" : [\"i1\", \"i3\"],\r\n    \"Description\" : \"4monitors\",\r\n    \"ImageFile\" : \"zanluk\",\r\n    \"Price\" : 129\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{catalog_url}}/products",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Catalog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{catalog_url}}/products",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CatalogById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{catalog_url}}/products/0192f319-da17-4794-b085-9d5327cfe537",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products",
+								"0192f319-da17-4794-b085-9d5327cfe537"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CatalogByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{catalog_url}}/products/category/i1",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"i1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Catalog",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"0192f319-da17-4794-b085-9d5327cfe537\",\r\n    \"Name\" : \"Nikulaaaa\",\r\n    \"Category\" : [\"c1\", \"c2\", \"cUpdated\"],\r\n    \"Description\" : \"Update\",\r\n    \"ImageFile\" : \"hnjeeee!\",\r\n    \"Price\" : 9999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{catalog_url}}/products",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Catalog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{catalog_url}}/products/0192f3e5-6f52-4ea3-b9e0-c3d630c8af0d",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products",
+								"0192f3e5-6f52-4ea3-b9e0-c3d630c8af0d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Basket",
+			"item": []
+		},
+		{
+			"name": "Discount",
+			"item": []
+		},
+		{
+			"name": "Ordering",
+			"item": []
+		}
+	]
+}
