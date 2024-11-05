@@ -8,3 +8,5 @@ global using Mapster;
 global using Marten;
 global using Carter;
 global using BuildingBlocks.Exceptions.Handler;
+global using Marten.Schema;
+global using Catalog.API.Data;
