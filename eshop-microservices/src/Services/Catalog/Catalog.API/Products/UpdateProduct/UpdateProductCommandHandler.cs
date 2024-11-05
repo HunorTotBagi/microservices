@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace Catalog.API.Products.UpdateProduct;
+﻿namespace Catalog.API.Products.UpdateProduct;
 
 internal class UpdateProductCommandHandler(IDocumentSession session, ILogger<UpdateProductCommandHandler> logger) : ICommandHandler<UpdateProductCommand, UpdateProductResult>
 {
@@ -10,7 +8,7 @@ internal class UpdateProductCommandHandler(IDocumentSession session, ILogger<Upd
         var product = await session.LoadAsync<Product>(command.Id, cancellationToken);
 
         if (product is null)
-            throw new ProductNotFoundException();
+            throw new ProductNotFoundException(command.Id);
 
         product.Name = command.Name;
         product.Category = command.Category;
