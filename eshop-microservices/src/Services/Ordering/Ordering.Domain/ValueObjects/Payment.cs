@@ -8,4 +8,3 @@ public record Payment
     public string CVV { get; } = default!;
     public int PaymentMethod { get; } = default!;
 }
-
