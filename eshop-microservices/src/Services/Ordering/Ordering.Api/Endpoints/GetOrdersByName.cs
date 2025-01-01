@@ -9,7 +9,6 @@ public class GetOrdersByName : ICarterModule
         app.MapGet("/orders/{orderName}", async (string orderName, ISender sender) =>
             {
                 var result = await sender.Send(new GetOrdersByNameQuery(orderName));
-
                 var response = result.Adapt<GetOrdersByNameResponse>();
 
                 return Results.Ok(response);
