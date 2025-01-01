@@ -1,8 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using Ordering.Application.Data;
-using Ordering.Application.Dtos;
-
-namespace Ordering.Application.Orders.Commands.CreateOrder;
+﻿namespace Ordering.Application.Orders.Commands.CreateOrder;
 
 public class CreateOrderHandler(IApplicationDbContext dbContext) : ICommandHandler<CreateOrderCommand, CreateOrderResult>
 {
@@ -11,7 +7,7 @@ public class CreateOrderHandler(IApplicationDbContext dbContext) : ICommandHandl
         var order = CreateNewOrder(command.Order);
 
         dbContext.Orders.Add(order);
-        await dbContext.SaveChangesASync(cancellationToken);
+        await dbContext.SaveChangesAsync(cancellationToken);
 
         return new CreateOrderResult(order.Id.Value);
     }
@@ -20,7 +16,7 @@ public class CreateOrderHandler(IApplicationDbContext dbContext) : ICommandHandl
     {
         var shippingAddress = Address.Of(
             orderDto.ShippingAddress.FirstName,
-            orderDto.ShippingAddress.Lastname,
+            orderDto.ShippingAddress.LastName,
             orderDto.ShippingAddress.EmailAddress,
             orderDto.ShippingAddress.AddressLine,
             orderDto.ShippingAddress.Country,
@@ -29,7 +25,7 @@ public class CreateOrderHandler(IApplicationDbContext dbContext) : ICommandHandl
 
         var billingAddress = Address.Of(
             orderDto.BillingAddress.FirstName,
-            orderDto.BillingAddress.Lastname,
+            orderDto.BillingAddress.LastName,
             orderDto.BillingAddress.EmailAddress,
             orderDto.BillingAddress.AddressLine,
             orderDto.BillingAddress.Country,

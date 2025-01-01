@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Ordering.Domain.Models;
 
 namespace Ordering.Application.Data;
 
@@ -10,5 +9,5 @@ public interface IApplicationDbContext
     DbSet<Order> Orders { get; }
     DbSet<OrderItem> OrderItems { get; }
 
-    Task<int> SaveChangesASync(CancellationToken cancellationToken);
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

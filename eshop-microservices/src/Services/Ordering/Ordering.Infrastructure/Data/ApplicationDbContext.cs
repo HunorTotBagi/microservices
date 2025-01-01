@@ -17,7 +17,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
     public DbSet<Order> Orders => throw new NotImplementedException();
 
-    public Task<int> SaveChangesASync(CancellationToken cancellationToken)
+    public Task<int> SaveChangesAsync(CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
