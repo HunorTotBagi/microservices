@@ -22,5 +22,4 @@ public class DeleteOrder : ICarterModule
     }
 }
 
-//public record DeleteOrderRequest(Guid Id);
 public record DeleteOrderResponse(bool IsSuccess);
