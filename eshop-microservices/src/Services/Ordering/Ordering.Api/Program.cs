@@ -3,11 +3,10 @@ using Ordering.Infrastructure.Data.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
-
 builder.Services
     .AddApplicationServices()
     .AddInfrastructureServices(builder.Configuration)
-    .AddApiServices();
+    .AddApiServices(builder.Configuration);
 
 var app = builder.Build();
 
